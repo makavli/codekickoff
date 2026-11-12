@@ -6,6 +6,7 @@ import { test } from 'node:test';
 import { fileURLToPath } from 'node:url';
 import { figures } from '../tools/figures.mjs';
 import { notes } from '../tools/release-notes.mjs';
+import { block, compare } from '../tools/fewturns-sync.mjs';
 
 const root = fileURLToPath(new URL('..', import.meta.url));
 const text = (p) => readFileSync(join(root, p), 'utf8');
@@ -164,4 +165,18 @@ test('the release text is the changelog entry of this version, and only that one
   assert.equal(notes('9.9.9', '# Changelog\n\n## 9.9.9 (2030-01-01)\n\n- New.\n\n## 9.9.8 (2029-01-01)\n\n- Old.\n').split('\n')[0], '- New.');
   assert.throws(() => notes('0.0.0'), /no entry/);
   assert.ok(text('CHANGELOG.md').indexOf(`## ${version} `) < 20, 'the newest entry is not the current version');
+});
+
+test('the Fewturns sync spots a changed block or version, and its fix carries both', () => {
+  const ours = skill('RULES.md');
+  const mine = block(ours);
+  const pinned = /as Fewturns (\d+\.\d+\.\d+) ships them/.exec(ours)[1];
+  assert.deepEqual(compare(ours, `x\n${mine}\ny`, pinned).same, { block: true, version: true });
+  const theirs = mine.replace('## Fewturns', '## Fewturns, newer');
+  const { same, fixed } = compare(ours, theirs, '9.9.9');
+  assert.deepEqual(same, { block: false, version: false });
+  assert.equal(block(fixed), theirs);
+  assert.match(fixed, /as Fewturns 9\.9\.9 ships them/);
+  assert.equal(fixed.replace(theirs, mine).replace('9.9.9', pinned), ours, 'the fix touched more than the block and the version');
+  assert.throws(() => compare(ours, 'no block', '1.0.0'), /no fewturns block/);
 });

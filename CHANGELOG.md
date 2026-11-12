@@ -1,5 +1,12 @@
 # Changelog
 
+## 1.0.1 (2026-11-12)
+
+- **Two more end-to-end cases:** `project` checks the project kickoff, `project-undo` checks that undo removes it again.
+- **`npm run fewturns`** says whether the rules carry Fewturns' current block, read from a local Fewturns clone (no network); `--write` copies a newer one in.
+- **Undo never empties a file.** A file that should go but cannot be deleted here stays as it was, and you are told which and why.
+- **`/codekickoff project` writes `HANDOFF.md` exactly as the template**, so a later undo can tell an untouched one from your notes.
+
 ## 1.0.0 (2026-11-12)
 
 - **A safety look first.** Setup reads (never runs) the hooks, servers and settings already installed, and says in plain words what deserves a second look; plus how to spot a scam plugin.

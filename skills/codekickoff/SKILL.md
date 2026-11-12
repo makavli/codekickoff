@@ -77,4 +77,6 @@ Ask which part to undo.
 - **Git.** Remove what [GIT.md](GIT.md) installed, each only if it still matches GIT.md: the hook file and the workflow file.
 - **A project.** As [PROJECT.md](PROJECT.md) says under "Undo".
 
+Where a file should go but no tool here can delete it, leave it exactly as it is, never emptied, and name it to the user with why it can go.
+
 Done when the user has seen each change and the edited files parse.
