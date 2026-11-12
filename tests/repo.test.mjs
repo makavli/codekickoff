@@ -56,7 +56,7 @@ test('the plugin and its marketplace describe the same plugin, with no hooks', (
 
 test('one skill, no script, and a short header', () => {
   assert.deepEqual(readdirSync(join(root, 'skills')), ['codekickoff']);
-  assert.deepEqual(readdirSync(join(root, 'skills/codekickoff')).sort(), ['GIT.md', 'HELPERS.md', 'PLANS.md', 'RULES.md', 'SKILL.md']);
+  assert.deepEqual(readdirSync(join(root, 'skills/codekickoff')).sort(), ['GIT.md', 'HELPERS.md', 'PLANS.md', 'PROJECT.md', 'RULES.md', 'SAFETY.md', 'SKILL.md', 'TIPS.md', 'WORK.md']);
   const fm = frontmatter(skill('SKILL.md'));
   assert.equal(fm.name, 'codekickoff');
   assert.ok(fm.description.length <= 400, `description is ${fm.description.length} characters`);
@@ -64,11 +64,11 @@ test('one skill, no script, and a short header', () => {
 
 test('each rules block has its two markers, once each and in order', () => {
   const rules = skill('RULES.md');
-  for (const name of ['fewturns', 'codekickoff']) {
+  for (const [name, page] of [['fewturns', rules], ['codekickoff', rules], ['codekickoff-project', skill('PROJECT.md')]]) {
     const [start, end] = [`<!-- ${name}:start -->`, `<!-- ${name}:end -->`];
-    assert.equal(rules.split(start).length, 2, start);
-    assert.equal(rules.split(end).length, 2, end);
-    assert.ok(rules.indexOf(start) < rules.indexOf(end));
+    assert.equal(page.split(start).length, 2, start);
+    assert.equal(page.split(end).length, 2, end);
+    assert.ok(page.indexOf(start) < page.indexOf(end));
   }
 });
 
@@ -102,9 +102,27 @@ test('each lean helper names its own model and never pairs web tools with local 
 });
 
 test('the README names every command the skill offers', () => {
-  const hint = frontmatter(skill('SKILL.md'))['argument-hint'].replace(/[[\]"]/g, '').split('|').filter((c) => c !== 'setup');
+  const hint = /\[([^\]]+)\]/.exec(frontmatter(skill('SKILL.md'))['argument-hint'])[1].split('|').filter((c) => c !== 'setup');
   for (const command of hint) assert.ok(text('README.md').includes(`/codekickoff ${command}\``), `README is missing /codekickoff ${command}`);
   assert.match(text('README.md'), /not made, endorsed or supported by Anthropic/);
+});
+
+test('every answer the arguments take has its page, and the evals use only those', () => {
+  const body = skill('SKILL.md');
+  const values = (key) => new RegExp(`^- \`${key}=\` ([^(:\\n]+)`, 'm').exec(body)[1].split(/,| or /).map((v) => v.trim().split(' ')[0]).filter(Boolean);
+  const rows = skill('PLANS.md').split('## The keys')[0].split('\n').filter((l) => /^\| (?!Plan|---)/.test(l)).map((r) => r.split('|')[1].trim().toLowerCase().replace(/ \(.*\)/, '').replace(' ', '-'));
+  assert.deepEqual(values('plan'), rows);
+  const works = [...skill('WORK.md').matchAll(/^## (\w+)$/gm)].map((m) => m[1]);
+  assert.deepEqual(values('work').filter((w) => w !== 'mix'), works);
+  assert.ok(skill('RULES.md').includes('<work lines>'), 'RULES.md has no place for the work lines');
+  assert.deepEqual(values('scope'), ['user', 'project']);
+  assert.deepEqual(values('git'), ['public', 'private', 'none', 'skip']);
+  for (const g of ['none', 'skip']) assert.ok(skill('GIT.md').includes(`git=${g}`), `GIT.md does not define git=${g}`);
+  for (const dir of readdirSync(join(root, 'evals'))) {
+    if (dir === 'results') continue;
+    const args = text(`evals/${dir}/prompt.md`).split('---').pop();
+    for (const [, key, value] of args.matchAll(/(\w+)=(\S+)/g)) assert.ok(values(key).includes(value), `evals/${dir}: ${key}=${value}`);
+  }
 });
 
 test('relative links and images resolve', () => {
