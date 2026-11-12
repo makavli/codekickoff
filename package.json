@@ -1,0 +1,17 @@
+{
+  "name": "codekickoff-skill",
+  "version": "0.1.0",
+  "private": true,
+  "description": "First setup for Claude Code newcomers: the right model and effort for your plan, lean helpers, working rules, safe git. Collects nothing.",
+  "license": "MIT",
+  "type": "module",
+  "engines": {
+    "node": ">=20"
+  },
+  "scripts": {
+    "test": "node --test tests/repo.test.mjs tests/workflow.test.mjs",
+    "figures": "node tools/figures.mjs",
+    "bump": "node tools/bump.mjs",
+    "check": "node tools/figures.mjs --check && npm test"
+  }
+}

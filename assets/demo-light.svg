@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="880" height="400" viewBox="0 0 880 400" font-family="ui-monospace, 'SF Mono', Menlo, Consolas, monospace" font-size="14">
+<rect width="880" height="400" rx="14" fill="#ffffff" stroke="#e3e0d8"/>
+<circle cx="28" cy="24" r="6" fill="#ff5f57"/><circle cx="48" cy="24" r="6" fill="#febc2e"/><circle cx="68" cy="24" r="6" fill="#28c840"/>
+<text x="440" y="29" text-anchor="middle" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="13" fill="#5d6470">first session · about one minute</text>
+<style>@media (prefers-reduced-motion: reduce){text{animation:none!important}}</style>
+<line x1="0" y1="44" x2="880" y2="44" stroke="#e3e0d8"/>
+<style>@keyframes l0{0%,3.75%{opacity:0}4.25%,96%{opacity:1}100%{opacity:0}}.l0{animation:l0 16s linear infinite}</style>
+<text class="l0" xml:space="preserve" x="32" y="74" fill="#5d6470">$ claude</text>
+<style>@keyframes l1{0%,8.12%{opacity:0}8.62%,96%{opacity:1}100%{opacity:0}}.l1{animation:l1 16s linear infinite}</style>
+<text class="l1" xml:space="preserve" x="32" y="96" fill="#d9480f">&gt; /codekickoff</text>
+<style>@keyframes l2{0%,12.50%{opacity:0}13.00%,96%{opacity:1}100%{opacity:0}}.l2{animation:l2 16s linear infinite}</style>
+<text class="l2" xml:space="preserve" x="52" y="118" fill="#16181d">Which plan do you have?   ● Pro   ○ Max   ○ Ultra   ○ Team   ○ API</text>
+<style>@keyframes l3{0%,16.88%{opacity:0}17.38%,96%{opacity:1}100%{opacity:0}}.l3{animation:l3 16s linear infinite}</style>
+<text class="l3" xml:space="preserve" x="52" y="140" fill="#16181d">What do you mostly do?    ● Code  ○ Writing  ○ Web  ○ Games</text>
+<style>@keyframes l4{0%,21.25%{opacity:0}21.75%,96%{opacity:1}100%{opacity:0}}.l4{animation:l4 16s linear infinite}</style>
+<text class="l4" xml:space="preserve" x="52" y="162" fill="#16181d">Your setup:</text>
+<style>@keyframes l5{0%,25.62%{opacity:0}26.12%,96%{opacity:1}100%{opacity:0}}.l5{animation:l5 16s linear infinite}</style>
+<text class="l5" xml:space="preserve" x="72" y="184" fill="#5d6470">model    opus · effort medium     tough job: /effort high</text>
+<style>@keyframes l6{0%,30.00%{opacity:0}30.50%,96%{opacity:1}100%{opacity:0}}.l6{animation:l6 16s linear infinite}</style>
+<text class="l6" xml:space="preserve" x="72" y="206" fill="#5d6470">helpers  scout, web-scout on haiku · worker, reviewer on sonnet</text>
+<style>@keyframes l7{0%,34.37%{opacity:0}34.87%,96%{opacity:1}100%{opacity:0}}.l7{animation:l7 16s linear infinite}</style>
+<text class="l7" xml:space="preserve" x="72" y="228" fill="#5d6470">rules    working rules · handoff · safe points</text>
+<style>@keyframes l8{0%,38.75%{opacity:0}39.25%,96%{opacity:1}100%{opacity:0}}.l8{animation:l8 16s linear infinite}</style>
+<text class="l8" xml:space="preserve" x="72" y="250" fill="#5d6470">git      branch + pull request · check before push · no CI cost</text>
+<style>@keyframes l9{0%,43.13%{opacity:0}43.63%,96%{opacity:1}100%{opacity:0}}.l9{animation:l9 16s linear infinite}</style>
+<text class="l9" xml:space="preserve" x="52" y="272" fill="#d9480f">Apply all?  Yes</text>
+<style>@keyframes l10{0%,47.50%{opacity:0}48.00%,96%{opacity:1}100%{opacity:0}}.l10{animation:l10 16s linear infinite}</style>
+<text class="l10" xml:space="preserve" x="52" y="294" fill="#2b8a3e">✓ settings.json backed up and updated</text>
+<style>@keyframes l11{0%,51.87%{opacity:0}52.37%,96%{opacity:1}100%{opacity:0}}.l11{animation:l11 16s linear infinite}</style>
+<text class="l11" xml:space="preserve" x="52" y="316" fill="#2b8a3e">✓ 4 helpers written to ~/.claude/agents</text>
+<style>@keyframes l12{0%,56.25%{opacity:0}56.75%,96%{opacity:1}100%{opacity:0}}.l12{animation:l12 16s linear infinite}</style>
+<text class="l12" xml:space="preserve" x="52" y="338" fill="#2b8a3e">✓ CLAUDE.md: working rules + this setup</text>
+<style>@keyframes l13{0%,60.62%{opacity:0}61.12%,96%{opacity:1}100%{opacity:0}}.l13{animation:l13 16s linear infinite}</style>
+<text class="l13" xml:space="preserve" x="52" y="360" fill="#16181d">Open a new session, then /codekickoff check.   Undo any part: /codekickoff undo</text>
+</svg>

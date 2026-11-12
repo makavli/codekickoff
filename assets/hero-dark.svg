@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="880" height="260" viewBox="0 0 880 260" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif">
+<rect width="880" height="260" rx="18" fill="#0f1115"/>
+<text x="48" y="78" font-size="15" font-weight="600" letter-spacing="2" fill="#ff8a4c">JUST INSTALLED CLAUDE CODE?</text>
+<text x="46" y="132" font-size="52" font-weight="800" fill="#eef0f4">Code<tspan fill="#ff8a4c">Kickoff</tspan></text>
+<text x="48" y="170" font-size="18" fill="#9aa3b2">One command sets you up like a seasoned user, sized to the plan you pay for.</text>
+<rect x="48" y="196" width="275" height="32" rx="16" fill="#1d222b" stroke="#2a303b"/><text x="185.5" y="217" text-anchor="middle" font-size="13" fill="#eef0f4">Your plan → the right model and effort</text>
+<rect x="333" y="196" width="139" height="32" rx="16" fill="#1d222b" stroke="#2a303b"/><text x="402.5" y="217" text-anchor="middle" font-size="13" fill="#eef0f4">Four lean helpers</text>
+<rect x="482" y="196" width="204" height="32" rx="16" fill="#1d222b" stroke="#2a303b"/><text x="584" y="217" text-anchor="middle" font-size="13" fill="#eef0f4">Rules, handoff, safe points</text>
+<rect x="696" y="196" width="132" height="32" rx="16" fill="#1d222b" stroke="#2a303b"/><text x="762" y="217" text-anchor="middle" font-size="13" fill="#eef0f4">Git the safe way</text>
+</svg>
