@@ -33,6 +33,10 @@ GitHub Actions minutes are free on public repositories. Offer a workflow that ru
 
 Actions minutes on private repositories come from a monthly allowance (2,000 minutes on GitHub Free at the time of writing; Windows runners count double and macOS ten times), and past it they are billed or stop. Say that in one line, then offer the cheaper default: **no CI workflow**, the check runs locally before each push, which costs nothing. Write a workflow only if the user still asks for one, and then with `workflow_dispatch` only, so it runs when they start it.
 
-## No git yet
+## Leave git alone (`git=skip`)
+
+Change nothing about git, and leave the **Git** line out of the rules.
+
+## No git yet (`git=none`)
 
 Say in two lines what git gives them (every change saved and reversible), offer `git init` in the project, and add the local check and the guard once there is a check to run.

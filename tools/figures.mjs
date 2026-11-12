@@ -37,22 +37,24 @@ ${parts.join('\n')}
 const DEMO = [
   ['$ claude', 'mute', 0],
   ['> /codekickoff', 'accent', 0],
+  ['Safety look: nothing to worry about in what is installed', 'ok', 1],
   ['Which plan do you have?   ● Pro   ○ Max   ○ Ultra   ○ Team   ○ API', 'ink', 1],
   ['What do you mostly do?    ● Code  ○ Writing  ○ Web  ○ Games', 'ink', 1],
   ['Your setup:', 'ink', 1],
   ['model    opus · effort medium     tough job: /effort high', 'mute', 2],
   ['helpers  scout, web-scout on haiku · worker, reviewer on sonnet', 'mute', 2],
-  ['rules    working rules · handoff · safe points', 'mute', 2],
+  ['rules    working rules · handoff · safe points · "done means tested"', 'mute', 2],
   ['git      branch + pull request · check before push · no CI cost', 'mute', 2],
   ['Apply all?  Yes', 'accent', 1],
   ['✓ settings.json backed up and updated', 'ok', 1],
   ['✓ 4 helpers written to ~/.claude/agents', 'ok', 1],
   ['✓ CLAUDE.md: working rules + this setup', 'ok', 1],
+  ['First week: /usage  /clear  /plan  /rewind  /effort      more: /codekickoff tips', 'ink', 1],
   ['Open a new session, then /codekickoff check.   Undo any part: /codekickoff undo', 'ink', 1],
 ];
 
 function demo(t) {
-  const cycle = 16; // seconds for one loop
+  const cycle = 18; // seconds for one loop
   const step = 0.7; // seconds between lines
   const lines = DEMO.map(([text, colour, indent], i) => {
     const on = ((i * step + 0.6) / cycle) * 100;
@@ -60,8 +62,8 @@ function demo(t) {
     return `<style>@keyframes l${i}{0%,${on.toFixed(2)}%{opacity:0}${(on + 0.5).toFixed(2)}%,96%{opacity:1}100%{opacity:0}}.l${i}{animation:l${i} ${cycle}s linear infinite}</style>
 <text class="l${i}" xml:space="preserve" x="${32 + indent * 20}" y="${y}" fill="${t[colour]}">${esc(text)}</text>`;
   });
-  return `<svg xmlns="http://www.w3.org/2000/svg" width="880" height="400" viewBox="0 0 880 400" font-family="${MONO}" font-size="14">
-<rect width="880" height="400" rx="14" fill="${t.panel}" stroke="${t.line}"/>
+  return `<svg xmlns="http://www.w3.org/2000/svg" width="880" height="440" viewBox="0 0 880 440" font-family="${MONO}" font-size="14">
+<rect width="880" height="440" rx="14" fill="${t.panel}" stroke="${t.line}"/>
 <circle cx="28" cy="24" r="6" fill="#ff5f57"/><circle cx="48" cy="24" r="6" fill="#febc2e"/><circle cx="68" cy="24" r="6" fill="#28c840"/>
 <text x="440" y="29" text-anchor="middle" font-family="${SANS}" font-size="13" fill="${t.mute}">first session · about one minute</text>
 <style>@media (prefers-reduced-motion: reduce){text{animation:none!important}}</style>

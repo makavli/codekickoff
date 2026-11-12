@@ -14,3 +14,6 @@ Thumbs.db
 
 # CodeKickoff's own backups, if you try it inside this folder
 *.bak-codekickoff-*
+
+# Local eval runs (they hold transcripts)
+evals/results/

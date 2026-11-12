@@ -13,7 +13,7 @@ Every paid plan shares one usage allowance between Claude and Claude Code, refil
 | Max | `opus`, effort `high` | `/effort xhigh` or `max`; `/model fable` sparingly, on its own weekly limit | `haiku` / `sonnet` |
 | Ultra | `opus`, effort `high` | `/model fable` with `/effort max` | `haiku` / `sonnet` |
 | Team Standard | as Pro | as Pro | as Pro |
-| Team Premium | as Max | as Max | as Max |
+| Team Premium | as Max | as Max; Fable counts at half the weekly limit | as Max |
 | Enterprise | as Max, unless the admin turned a model off | ask the admin what is on | as Max |
 | API (pay per use) | `sonnet`, effort `medium` | `/model opus` for that session | `haiku` / `haiku` |
 

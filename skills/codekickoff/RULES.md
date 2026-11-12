@@ -23,7 +23,7 @@ This block is [Fewturns](https://github.com/makavli/fewturns)' working rules, as
 
 ## Block 2: this setup
 
-Fill the `<...>` places from the user's row in [PLANS.md](PLANS.md) and their answers. Keep the **Git** line only if they chose the git workflow; drop the `<...>` places that do not apply.
+Fill the `<...>` places from the user's row in [PLANS.md](PLANS.md), their work type in [WORK.md](WORK.md) and their answers; drop the `<...>` places that do not apply. Write this block last. Keep the **Helpers, unasked** line only if the four helper files were written, and the **Git** line only if they chose the git workflow.
 
 <!-- codekickoff:start -->
 ## CodeKickoff: this setup
@@ -32,8 +32,9 @@ Fill the `<...>` places from the user's row in [PLANS.md](PLANS.md) and their an
 - **Helpers, unasked.** Standing request: use the lean helpers (scout, web-scout, worker, reviewer) without asking, for bounded jobs whose material is large and whose answer is small. Brief once, ask for a short report, check a finding before acting on it.
 - **Handoff.** Each project keeps `HANDOFF.md`: the state now and the next step. Read it first in a new session; rewrite it after each block of work, dropping what is no longer true.
 - **Safe points.** When a block of work is done and tested, update the handoff, then ask whether to start a fresh session or carry on, recommending the cheaper: fresh when the conversation is long and the next job needs nothing unwritten.
-- **Memory.** "Remember this" means one short fact saved to memory, with a one-line pointer in its index. Never a password, key or token.
+- **Memory.** Claude Code keeps an auto memory of its own (`/memory` shows it). "Remember this" means one short fact saved there, with a one-line pointer in its index. Never a password, key or token.
 - **Ask first.** Publishing, deleting, paying, sending anything outside this machine, and pushing to `main` each wait for a clear yes.
 - **Git.** Every change on a branch and a pull request. Run the project's full check before every push. Never merge, force-push or push to `main`: merging is the user's.
 - **Plain words.** The user is new to Claude Code: explain a term in one line the first time it comes up.
+<work lines>
 <!-- codekickoff:end -->
