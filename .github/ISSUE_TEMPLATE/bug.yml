@@ -1,0 +1,18 @@
+name: Something is wrong
+description: A setting is wrong for a plan, a step fails, or the skill misbehaves.
+labels: [bug]
+body:
+  - type: input
+    id: version
+    attributes:
+      label: Claude Code version
+      description: The output of `claude --version`.
+    validations:
+      required: true
+  - type: textarea
+    id: what
+    attributes:
+      label: What happened, and what you expected
+      description: Your plan, the step, and what it did. Remove anything private first: settings can hold keys.
+    validations:
+      required: true

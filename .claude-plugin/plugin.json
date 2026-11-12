@@ -1,0 +1,13 @@
+{
+  "name": "codekickoff",
+  "version": "0.1.0",
+  "description": "First setup for Claude Code newcomers: the model and effort your plan affords, four lean helpers, working rules with a handoff and safe points, and safe git. One skill, no hooks, nothing collected.",
+  "author": {
+    "name": "makavli",
+    "url": "https://github.com/makavli"
+  },
+  "homepage": "https://github.com/makavli/codekickoff",
+  "repository": "https://github.com/makavli/codekickoff",
+  "license": "MIT",
+  "keywords": ["beginner", "onboarding", "setup", "getting-started", "subagents", "workflow", "productivity"]
+}

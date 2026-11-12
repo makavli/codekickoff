@@ -1,0 +1,17 @@
+{
+  "$schema": "https://anthropic.com/claude-code/marketplace.schema.json",
+  "name": "codekickoff",
+  "description": "CodeKickoff: just installed Claude Code? Start here.",
+  "owner": {
+    "name": "makavli",
+    "url": "https://github.com/makavli"
+  },
+  "plugins": [
+    {
+      "name": "codekickoff",
+      "description": "First setup for Claude Code newcomers, sized to your plan. One skill, no hooks, nothing collected.",
+      "source": "./",
+      "category": "productivity"
+    }
+  ]
+}
