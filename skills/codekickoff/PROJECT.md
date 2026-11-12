@@ -23,6 +23,8 @@ Show the files below before writing them, then write them on a yes. Never write 
 
 ## HANDOFF.md
 
+Write it exactly as shown, placeholders included: the first session fills them, and undo can still tell an untouched one from the user's notes.
+
 ```markdown
 # Handoff
 
