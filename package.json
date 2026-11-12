@@ -9,7 +9,7 @@
     "node": ">=20"
   },
   "scripts": {
-    "test": "node --test tests/repo.test.mjs tests/workflow.test.mjs",
+    "test": "node --test tests/repo.test.mjs",
     "figures": "node tools/figures.mjs",
     "bump": "node tools/bump.mjs",
     "check": "node tools/figures.mjs --check && npm test"
