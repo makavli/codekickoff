@@ -1,5 +1,12 @@
 # Changelog
 
+## 1.0.6 (2026-11-13)
+
+- **Red checks open an issue.** A pull request whose checks fail gets one `ci-failure` issue, linked from the pull request, and the next green run closes it. Closing the pull request closes it too. Main gets its own issue, and a failed release counts as red.
+- **One gate for main.** A `passed` job sums up the checks, so main's protection can require one stable name, and `release` waits for it.
+- **The workflow scripts are tested** against a stand-in `gh`, every path of the issue (`tests/workflow.test.mjs`).
+- **Dependabot keeps the pinned actions fresh.** One grouped pull request a month at most.
+
 ## 1.0.5 (2026-11-13)
 
 - **Backups stay out of commits in worktrees and submodules.** Setup finds the exclude file with `git rev-parse --git-path info/exclude` instead of assuming `.git` is a folder.

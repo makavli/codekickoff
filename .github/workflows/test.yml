@@ -1,7 +1,8 @@
 name: test
 
 # Kept small on purpose: one Linux job of about a minute per pull request, and on main the same job, then `release`.
-# The token can only read, except in `release`, which publishes the merged version.
+# The token can only read, except in two jobs: `issue` opens an issue while the checks of a pull request or of main
+# are red and closes it once they are green; `release` publishes the merged version.
 on:
   push:
     branches: [main]
@@ -38,10 +39,65 @@ jobs:
       - name: Pictures are up to date, and the tests pass
         run: npm run check
 
+  # One name for the rule on main to require, whatever the list of systems holds.
+  passed:
+    if: always()
+    needs: test
+    runs-on: ubuntu-latest
+    timeout-minutes: 2
+    steps:
+      - name: Every test job succeeded
+        run: test "${{ needs.test.result }}" = "success"
+
+  # Red checks open an issue: one per pull request, linked to it, and one for main. The next green run closes it, and
+  # so does closing the pull request (close-issue.yml). What stops the merge is `passed`, the check main requires: the
+  # issue is the notice, open while the checks are red. A fork's token cannot write issues: forks are left out.
+  issue:
+    if: ${{ !cancelled() && (github.event_name == 'push' || github.event.pull_request.head.repo.full_name == github.repository) }}
+    needs: [passed, release]
+    runs-on: ubuntu-latest
+    timeout-minutes: 2
+    permissions:
+      issues: write
+      pull-requests: write
+    steps:
+      - name: Open, update or close the issue of this pull request or of main
+        env:
+          GH_TOKEN: ${{ github.token }}
+          GH_REPO: ${{ github.repository }}
+          PR: ${{ github.event.pull_request.number }}
+          RESULT: ${{ needs.release.result == 'failure' && 'failure' || needs.passed.result }}   # a failed release is red too
+          RUN: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}
+          SHA: ${{ github.event.pull_request.head.sha || github.sha }}
+        run: |
+          if [ -n "$PR" ]; then title="Checks failed on pull request #$PR"; else title="Checks failed on main"; fi
+          issue="$(gh api "repos/$GH_REPO/issues?state=open&labels=ci-failure&per_page=100" --jq ".[] | select(.pull_request == null and .title == \"$title\") | .number" | head -n 1)"
+          if [ "$RESULT" = "success" ]; then
+            if [ -n "$issue" ]; then gh issue close "$issue" --comment "Fixed: the checks on ${SHA:0:7} are green. $RUN"; fi
+            exit 0
+          fi
+          if [ -n "$issue" ]; then
+            gh issue comment "$issue" --body "Still red on ${SHA:0:7}: $RUN"
+            exit 0
+          fi
+          # A pull request closed while this run went on gets no issue: close-issue.yml has already run for it.
+          if [ -n "$PR" ] && [ "$(gh pr view "$PR" --json state --jq .state)" != "OPEN" ]; then exit 0; fi
+          gh label create ci-failure --force --color B60205 --description "The checks of a pull request or of main are red"
+          if [ -z "$PR" ]; then
+            gh issue create --title "$title" --label ci-failure --body "The checks on main failed on ${SHA:0:7}: $RUN
+
+          No release is made while main is red. The next green run on main closes this issue."
+            exit 0
+          fi
+          url="$(gh issue create --title "$title" --label ci-failure --body "The checks of #$PR failed on ${SHA:0:7}: $RUN
+
+          #$PR cannot merge until its checks are green. The next green run closes this issue.")"
+          gh pr comment "$PR" --body "Blocked by #${url##*/}: the checks are red. $RUN"
+
   # Every merge into main is a release: tag the merged commit and publish its changelog entry.
   release:
     if: github.event_name == 'push' && github.ref == 'refs/heads/main'
-    needs: test
+    needs: passed
     runs-on: ubuntu-latest
     timeout-minutes: 5
     permissions:

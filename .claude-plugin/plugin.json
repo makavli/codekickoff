@@ -1,6 +1,6 @@
 {
   "name": "codekickoff",
-  "version": "1.0.5",
+  "version": "1.0.6",
   "description": "First setup for Claude Code newcomers: the model and effort your plan affords, four lean helpers, working rules with a handoff and safe points, and safe git. One skill, no hooks, nothing collected.",
   "author": {
     "name": "makavli",
