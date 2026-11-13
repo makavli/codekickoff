@@ -27,7 +27,7 @@ exit 0
 
 ## Public repository: CI is free
 
-GitHub Actions minutes are free on public repositories. Offer a workflow that runs the project's check on every pull request: ask for the check command (or read it from `package.json`, `Makefile`, `pyproject.toml`), and write `.github/workflows/check.yml` with it on `ubuntu-latest` only, read-only permissions, and a 10-minute timeout. Before the repository goes public, remind the user that its whole history becomes visible: no keys, no personal addresses.
+GitHub Actions minutes are free on public repositories. Offer a workflow that runs the project's check on every pull request: ask for the check command (or read it from `package.json`, `Makefile`, `pyproject.toml`), and write `.github/workflows/check.yml` with it on `ubuntu-latest` only, triggered by `pull_request` and `push` only (never `pull_request_target`, which hands fork code a write token and the secrets), read-only permissions, `persist-credentials: false` on checkout, and a 10-minute timeout. Before the repository goes public, remind the user that its whole history becomes visible: no keys, no personal addresses.
 
 ## Private repository: say the cost first
 
