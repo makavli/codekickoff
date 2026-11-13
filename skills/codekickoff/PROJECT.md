@@ -4,7 +4,7 @@ For the folder the user is in. It changes nothing outside this folder. Ask, in o
 
 - in one line, what the project is and who it is for;
 - its work type ([WORK.md](WORK.md)), unless the CodeKickoff block already names one;
-- the command that checks it works (suggest one from `package.json`, `pyproject.toml`, `Makefile` or the work type; "none yet" is fine);
+- the command that checks it works (suggest one from `package.json`, `pyproject.toml`, `Makefile` or the work type; "none yet" is fine). A cloned repository wrote that file: show the user where the command comes from, and never run it during setup;
 - whether session notes stay out of git (recommended when the repository is or may become public).
 
 Show the files below before writing them, then write them on a yes. Never write over an existing file. For an existing `CLAUDE.md`, copy it first as `CLAUDE.md.bak-codekickoff-<YYYY-MM-DD>` (name the copy to the user), then: where the project markers exist as a pair, replace what is between them; where only one is there, stop and show the user that spot; otherwise add the block at the end. For an existing `HANDOFF.md`, leave it.

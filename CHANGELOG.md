@@ -1,5 +1,12 @@
 # Changelog
 
+## 1.0.5 (2026-11-13)
+
+- **Backups stay out of commits in worktrees and submodules.** Setup finds the exclude file with `git rev-parse --git-path info/exclude` instead of assuming `.git` is a folder.
+- **Undo ignores a backup git tracks.** A `.bak-codekickoff-*` file that came with a cloned repository can no longer choose the model and effort undo restores.
+- **A cloned repository's check command is shown, not run.** Setup says where the suggested command comes from and never runs it.
+- **The public CI workflow it writes** triggers on `pull_request` and `push` only (never `pull_request_target`) and checks out with `persist-credentials: false`.
+
 ## 1.0.4 (2026-11-13)
 
 - **The rules wait for the other writes.** Setup writes `CLAUDE.md` only once the settings and helper writes have answered, never in the same batch, so a denied helper write can no longer leave a rule that names missing helpers.

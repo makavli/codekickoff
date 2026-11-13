@@ -1,6 +1,6 @@
 {
   "name": "codekickoff-skill",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "private": true,
   "description": "First setup for Claude Code newcomers: the right model and effort for your plan, lean helpers, working rules, safe git. Collects nothing.",
   "license": "MIT",
