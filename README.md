@@ -7,7 +7,7 @@
 
 <p align="center">
   <a href="https://github.com/makavli/codekickoff/actions/workflows/test.yml"><img src="https://github.com/makavli/codekickoff/actions/workflows/test.yml/badge.svg?branch=main" alt="Tests"></a>
-  <a href="https://github.com/makavli/codekickoff/releases/latest"><img src="https://img.shields.io/badge/release-v1.0.3-111111?style=flat-square" alt="Release v1.0.3"></a>
+  <a href="https://github.com/makavli/codekickoff/releases/latest"><img src="https://img.shields.io/badge/release-v1.0.4-111111?style=flat-square" alt="Release v1.0.4"></a>
   <a href="LICENSE"><img src="https://img.shields.io/badge/license-MIT-111111?style=flat-square" alt="MIT license"></a>
   <img src="https://img.shields.io/badge/for-Claude%20Code%20newcomers-d9480f?style=flat-square" alt="For Claude Code newcomers">
   <img src="https://img.shields.io/badge/hooks-0-111111?style=flat-square" alt="No hooks">
@@ -49,7 +49,7 @@ Answer up to four questions. About one minute. Open a new session and type `/cod
 
 In a hurry? Give the answers in one line: `/codekickoff setup plan=pro work=code scope=user git=private`.
 
-To pin a version: `claude plugin marketplace add makavli/codekickoff#v1.0.3`. To update: `claude plugin marketplace update codekickoff`.
+To pin a version: `claude plugin marketplace add makavli/codekickoff#v1.0.4`. To update: `claude plugin marketplace update codekickoff`.
 
 ## What you get
 
