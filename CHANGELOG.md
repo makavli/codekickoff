@@ -1,5 +1,9 @@
 # Changelog
 
+## 1.0.7 (2026-11-13)
+
+- **Dependabot's pull requests can pass.** They bump only the pinned actions, never the version, so the "version must be new" check now skips them; merging one publishes no release (the release step skips a version that exists).
+
 ## 1.0.6 (2026-11-13)
 
 - **Red checks open an issue.** A pull request whose checks fail gets one `ci-failure` issue, linked from the pull request, and the next green run closes it. Closing the pull request closes it too. Main gets its own issue, and a failed release counts as red.
