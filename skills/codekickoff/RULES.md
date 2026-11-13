@@ -4,7 +4,7 @@ Two blocks go into the user's instruction file (`CLAUDE.md`), markers included. 
 
 ## Block 1: how to work efficiently
 
-This block is [Fewturns](https://github.com/makavli/fewturns)' working rules, as Fewturns 1.5.0 ships them, under Fewturns' own markers: if the user also installs Fewturns, the two see one block, never two.
+This block is [Fewturns](https://github.com/makavli/fewturns)' working rules, as Fewturns 1.5.2 ships them, under Fewturns' own markers: if the user also installs Fewturns, the two see one block, never two.
 
 <!-- fewturns:start -->
 ## Fewturns: waiting is free, requests are not
