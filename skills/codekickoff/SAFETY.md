@@ -46,4 +46,4 @@ An empty result is calm, not a guarantee. This look reads patterns, and code can
 - A skill is text: read it before you install it.
 - Fewer plugins means less riding on every request. Install for a need.
 
-For a full check of what every request carries and what is installed, there is a separate free skill, Fewturns (`/fewturns trust`, https://github.com/makavli/fewturns).
+For a full check of what every request carries and what is installed, there is a separate free skill, Fewturns (`/fewturns trust`, https://github.com/makavli/fewturns). Before you install a plugin from GitHub, `/fewturns audit owner/repo` reads it for you: who owns it, what it would run, what it would cost each request.
