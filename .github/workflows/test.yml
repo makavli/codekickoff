@@ -42,7 +42,7 @@ jobs:
   # One name for the rule on main to require, whatever the list of systems holds.
   passed:
     if: always()
-    needs: passed
+    needs: test
     runs-on: ubuntu-latest
     timeout-minutes: 2
     steps:
