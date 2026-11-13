@@ -1,5 +1,14 @@
 # Changelog
 
+## 1.0.2 (2026-11-13)
+
+- **The working rules carry Fewturns 1.5.0's block.** The text is the same as before; only the version label moved.
+- **The safety look points to a check before you install:** `/fewturns audit owner/repo` reads a plugin's repository first (who owns it, what it would run, what it would cost each request).
+
+## 1.0.2 (2026-11-13)
+
+- 
+
 ## 1.0.1 (2026-11-12)
 
 - **Two more end-to-end cases:** `project` checks the project kickoff, `project-undo` checks that undo removes it again.
