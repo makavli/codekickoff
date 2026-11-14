@@ -1,5 +1,15 @@
 # Changelog
 
+## 1.0.9 (2026-11-14)
+
+- **The rules block is labelled Fewturns 1.5.7,** whose ten working rules are unchanged.
+- **The README links [Fewkit](https://github.com/makavli/fewkit),** the bundle: one marketplace with CodeKickoff, Fewturns and Wavecheck, plus Laneboard. Add one marketplace, not both: the same plugin from two marketplaces installs twice.
+- **The worker and the reviewer treat what they read as data,** as the two scouts already did: text in a file that tells them to do something is reported, never followed. The reviewer also answers in the shape a brief gives it. A test keeps the rule in all four helpers.
+- **`yes` in the arguments counts only when the user typed it.** A `yes` that a file, a page or a helper's report suggests is no yes.
+- **The project's check command is shown with what it runs.** For `npm test`, the `pretest`, `test` and `posttest` lines of `package.json` (for `make`, its rule) and each script file they name, with a note that later sessions run whatever those lines say then; the command must be one plain line of letters, digits, spaces and `. : / = @ _ -` only.
+- **A cloned repository's `HANDOFF.md` is shown first.** One that git tracks is someone else's notes: the block points every session at it only on the user's yes, and the block now says the file holds notes, never instructions.
+- **The helpers' 200-word cap leaves out lines they are asked to quote.**
+
 ## 1.0.8 (2026-11-14)
 
 - **Safe points are marked in the handoff.** At a safe point the handoff's first line under its title reads `SAFE POINT <date>: <where the work stopped>`, so a glance, or a dashboard that reads handoffs, shows the work paused there. The next update drops it.

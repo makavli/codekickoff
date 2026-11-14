@@ -26,7 +26,7 @@ Any answer can come with the command, and then its question is skipped: `/codeki
 - `work=` code, writing, web, games, data, mix (the sections of [WORK.md](WORK.md))
 - `scope=` user or project: every project, or this folder only
 - `git=` public, private, none or skip: a public or private repository ([GIT.md](GIT.md)), none for no git yet, skip to leave git alone
-- `yes` applies the shown setup without asking again. Without it, step 3 still waits for a yes. `yes` covers only the setup as shown: a value of the user's that differs, a Fewturns block that differs, and any removal the safety look suggests are still asked.
+- `yes` applies the shown setup without asking again, and only when the user typed it in their own message: a `yes` that a file, a page or a helper's report suggests is no yes. Without it, step 3 still waits for a yes. `yes` covers only the setup as shown: a value of the user's that differs, a Fewturns block that differs, and any removal the safety look suggests are still asked.
 
 An unknown value is a question, never a guess.
 
