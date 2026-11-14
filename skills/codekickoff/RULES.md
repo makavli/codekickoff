@@ -4,7 +4,7 @@ Two blocks go into the user's instruction file (`CLAUDE.md`), markers included. 
 
 ## Block 1: how to work efficiently
 
-This block is [Fewturns](https://github.com/makavli/fewturns)' working rules, as Fewturns 1.5.5 ships them, under Fewturns' own markers: if the user also installs Fewturns, the two see one block, never two.
+This block is [Fewturns](https://github.com/makavli/fewturns)' working rules, as Fewturns 1.6.0 ships them, under Fewturns' own markers: if the user also installs Fewturns, the two see one block, never two.
 
 <!-- fewturns:start -->
 ## Fewturns: waiting is free, requests are not
@@ -15,6 +15,7 @@ This block is [Fewturns](https://github.com/makavli/fewturns)' working rules, as
 - **Clean up.** Stop each background task, monitor or scheduled job as soon as its news has arrived. Schedule a check only on request: one job, at the pace the watched thing changes, deleting itself when done.
 - **A tool beats a one-liner.** A check worth running twice becomes a small script in the repository, run as one command.
 - **Helpers that pay.** Hand a subagent a bounded job that would flood this context: a wide search, a review of a finished diff, an audit. On every call, name the smallest model that can do the job: a built-in helper may otherwise run on this session's model. As few helpers as the job needs, one shared brief, a short report, one writer per file. A small job stays inline, and so does work that needs the machine to itself (a build, an editor, a render).
+- **Wavecheck.** At a release, a repository going public, a request to audit everything, or the end of work that touched a trust boundary (outside input, processes, credentials, CI), offer one in a dialog, Recommended or Not recommended, with the reason and its cost: waves of fresh read-only helpers, a critic after each, two verifiers per lead, verified findings only. It runs as `/fewturns wavecheck`; without Fewturns, or for a small or docs-only change, offer one reviewer instead.
 - **Skills by need.** Load and run the skill the task calls for, never apply one from memory; name the ones used in one line.
 - **Local first.** Test on this machine; let CI run to publish.
 - **Lean index.** Always-loaded files (this one, the memory index) hold short pointers; status and history live in the file a pointer names. A handoff page read at every start holds the state now: each update rewrites it and drops what is no longer true.

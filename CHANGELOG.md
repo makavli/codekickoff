@@ -1,5 +1,10 @@
 # Changelog
 
+## 1.0.9 (2026-11-14)
+
+- **The working rules are Fewturns 1.6.0's,** with its new rule, *Wavecheck*: at a release, a repository going public or after work that touched a trust boundary, the agent offers a check in waves of read-only helpers, marked Recommended or Not recommended with its cost. The full run comes with Fewturns (`/fewturns wavecheck`); without it, the agent offers one reviewer instead. Run `/codekickoff` again to update a block you installed before.
+- **The README links [Fewkit](https://github.com/makavli/fewkit),** one marketplace for CodeKickoff and Fewturns. Add one marketplace, not both: the same plugin from two marketplaces installs twice.
+
 ## 1.0.8 (2026-11-14)
 
 - **Safe points are marked in the handoff.** At a safe point the handoff's first line under its title reads `SAFE POINT <date>: <where the work stopped>`, so a glance, or a dashboard that reads handoffs, shows the work paused there. The next update drops it.

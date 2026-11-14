@@ -7,7 +7,7 @@
 
 <p align="center">
   <a href="https://github.com/makavli/codekickoff/actions/workflows/test.yml"><img src="https://github.com/makavli/codekickoff/actions/workflows/test.yml/badge.svg?branch=main" alt="Tests"></a>
-  <a href="https://github.com/makavli/codekickoff/releases/latest"><img src="https://img.shields.io/badge/release-v1.0.8-111111?style=flat-square" alt="Release v1.0.8"></a>
+  <a href="https://github.com/makavli/codekickoff/releases/latest"><img src="https://img.shields.io/badge/release-v1.0.9-111111?style=flat-square" alt="Release v1.0.9"></a>
   <a href="LICENSE"><img src="https://img.shields.io/badge/license-MIT-111111?style=flat-square" alt="MIT license"></a>
   <img src="https://img.shields.io/badge/for-Claude%20Code%20newcomers-d9480f?style=flat-square" alt="For Claude Code newcomers">
   <img src="https://img.shields.io/badge/hooks-0-111111?style=flat-square" alt="No hooks">
@@ -49,7 +49,7 @@ Answer up to four questions. About one minute. Open a new session and type `/cod
 
 In a hurry? Give the answers in one line: `/codekickoff setup plan=pro work=code scope=user git=private`.
 
-To pin a version: `claude plugin marketplace add makavli/codekickoff#v1.0.8`. To update: `claude plugin marketplace update codekickoff`.
+To pin a version: `claude plugin marketplace add makavli/codekickoff#v1.0.9`. To update: `claude plugin marketplace update codekickoff`.
 
 ## What you get
 
@@ -75,6 +75,7 @@ To pin a version: `claude plugin marketplace add makavli/codekickoff#v1.0.8`. To
 - **Collects nothing.** No script, no hooks, no network. It is text that Claude reads.
 - **Undo.** `/codekickoff undo` puts back the model and effort you had before, and removes its helpers, rules blocks and git guard, leaving anything you changed yourself.
 - **Plays well with [Fewturns](https://github.com/makavli/fewturns).** The working rules are Fewturns' block under Fewturns' own markers. Install Fewturns later to trim what every request carries; you will never get the rules twice.
+- **Part of [Fewkit](https://github.com/makavli/fewkit).** One marketplace for CodeKickoff and Fewturns, with a guide to how they fit together and with Laneboard, a tray app that shows every project at a glance. Add one marketplace, Fewkit's or this one, not both: the same plugin from two marketplaces installs twice.
 
 ## Limits
 
