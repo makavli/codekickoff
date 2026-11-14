@@ -1,5 +1,11 @@
 # Changelog
 
+## 1.0.8 (2026-11-14)
+
+- **Safe points are marked in the handoff.** At a safe point the handoff's first line under its title reads `SAFE POINT <date>: <where the work stopped>`, so a glance, or a dashboard that reads handoffs, shows the work paused there. The next update drops it.
+- **The handoff opens on the state, not on its instructions.** The template's "rewritten after each block of work" line is now an HTML comment: a preview or a dashboard shows the first real line. Undo still recognises an untouched handoff from 1.0.7 and before.
+- The working rules carry Fewturns 1.5.5's block (same text; only the version label moved).
+
 ## 1.0.7 (2026-11-13)
 
 - **Dependabot's pull requests can pass.** They bump only the pinned actions, never the version, so the "version must be new" check now skips them; merging one publishes no release (the release step skips a version that exists).

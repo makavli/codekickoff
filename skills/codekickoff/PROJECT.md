@@ -28,7 +28,7 @@ Write it exactly as shown, placeholders included: the first session fills them, 
 ```markdown
 # Handoff
 
-The state now, rewritten after each block of work. Drop what is no longer true.
+<!-- The state now, rewritten after each block of work. Drop what is no longer true. -->
 
 ## Now
 - <what works, what is in progress>
@@ -49,6 +49,6 @@ Close in two lines: what was written, and that the next session starts by readin
 ## Undo
 
 - Remove the `codekickoff-project` block, markers included; delete `CLAUDE.md` if nothing else is left in it.
-- Delete `HANDOFF.md` only if it still equals the template above; once it holds notes, it is the user's: say so and leave it.
+- Delete `HANDOFF.md` only if it still equals the template above (or the same template with that first line outside its comment marks, as CodeKickoff 1.0.7 and before wrote it); once it holds notes, it is the user's: say so and leave it.
 - Remove the `HANDOFF.md` line from `.git/info/exclude` if this kickoff added it.
 - Leave a repository that `git init` created: it may already hold the user's work.
