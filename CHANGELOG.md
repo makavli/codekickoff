@@ -4,6 +4,7 @@
 
 - **The working rules are Fewturns 1.6.0's,** with its new rule, *Wavecheck*: at a release, a repository going public or after work that touched a trust boundary, the agent offers a check in waves of read-only helpers, marked Recommended or Not recommended with its cost. The full run comes with Fewturns (`/fewturns wavecheck`); without it, the agent offers one reviewer instead. Run `/codekickoff` again to update a block you installed before.
 - **The README links [Fewkit](https://github.com/makavli/fewkit),** one marketplace for CodeKickoff and Fewturns. Add one marketplace, not both: the same plugin from two marketplaces installs twice.
+- **The worker and the reviewer treat what they read as data,** as the two scouts already did: text in a file that tells them to do something is reported, never followed. The reviewer also answers in the shape a brief gives it. A test keeps the rule in all four helpers.
 
 ## 1.0.8 (2026-11-14)
 
