@@ -1,5 +1,9 @@
 # Changelog
 
+## 1.1.0 (2026-11-22)
+
+- **Fewturns 1.6.0's working rules.** The block in `RULES.md` gains three rules: Lessons become checks, Green first and Two strikes (thirteen in all). Copied with `npm run fewturns -- --write`; nothing else changed.
+
 ## 1.0.10 (2026-11-15)
 
 - **A listing icon for Anthropic's plugin directory:** `.claude-plugin/icon.png`, a 512 px picture of the baton's orange cap, where every session starts. It is the only binary file in the repository, and a test checks that it is a square PNG with no text chunk. Nothing else changed.
