@@ -1,5 +1,9 @@
 # Changelog
 
+## 1.2.0 (2026-11-23)
+
+- **Fewturns 1.7.0's working rules.** In the block in `RULES.md`, *Green first* now names a budget in runs or time, and *Two strikes* tells a red run in four parts (EXPECTED, SAW, FENCE, DEAD ENDS), ending the attempt on the same SAW twice or a spent budget. One rule is new: *Gates by undo*, where a step a revert undoes goes ahead on green, a step others build on also needs a review in a fresh context, and a step that cannot be undone waits for the user's yes. That makes fourteen rules in all. Copied with `npm run fewturns -- --write`; nothing else changed.
+
 ## 1.1.0 (2026-11-22)
 
 - **Fewturns 1.6.0's working rules.** The block in `RULES.md` gains three rules: Lessons become checks, Green first and Two strikes (thirteen in all). Copied with `npm run fewturns -- --write`; nothing else changed.
